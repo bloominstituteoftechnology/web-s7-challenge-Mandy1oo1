@@ -1,18 +1,24 @@
-import React from 'react'
-import Home from './Home'
-import Form from './Form'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'; // Import NavLink from react-router-dom
+import Home from './Home';
+import Form from './Form';
 
 function App() {
   return (
-    <div id="app">
-      <nav>
-        {/* NavLinks here */}
-      </nav>
-      {/* Route and Routes here */}
-      <Home />
-      <Form />
-    </div>
-  )
+    <Router>
+      <div id="app">
+        <nav>
+          {/* Use NavLink instead of NavLink */}
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/order">Order</NavLink>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/order" element={<Form />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

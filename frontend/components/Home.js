@@ -1,5 +1,6 @@
-import React from 'react'
-import pizza from './images/pizza.jpg'
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
+import pizza from './images/pizza.jpg';
 
 function Home() {
   return (
@@ -7,10 +8,12 @@ function Home() {
       <h2>
         Welcome to Bloom Pizza!
       </h2>
-      {/* clicking on the img should navigate to "/order" */}
-      <img alt="order-pizza" style={{ cursor: 'pointer' }} src={pizza} />
+      {/* Wrap the image with Link */}
+      <Link to="/order">
+        <img alt="order-pizza" style={{ cursor: 'pointer' }} src={pizza} />
+      </Link>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
