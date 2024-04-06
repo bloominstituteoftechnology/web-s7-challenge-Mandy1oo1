@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
+import pizza from './images/pizza.jpg';
 
 // Validation schema
 const validationErrors = {
@@ -121,6 +123,7 @@ export default function Form() {
       </div>
       
       <input type="submit" disabled={!formData.fullName || !formData.size} />
+      <Link to="/">Back to Home</Link>
     </form>
   );
 }
